@@ -21,7 +21,7 @@ public class ClientesServicelmpl implements ClientesService {
 	@Override
 	public boolean registrarCliente(Cliente cliente) {
 		
-		if(clienteRepository.findById(cliente.getUsuario())!=null){		
+		if(clienteRepository.findById(cliente.getUsuario()).isPresent()){		
 		return false;
 		}
 		clienteRepository.save(cliente);
