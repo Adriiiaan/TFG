@@ -12,7 +12,7 @@ export class RegistrarComponent {
   constructor(private registrarService:RegistrarService){
   }
   registrar(){
-    this.registrarService.registar(this.cliente).subscribe({
+    this.registrarService.registrar(this.cliente).subscribe({
       next:data=>alert("Usuario registrado"),
       error:err=>alert("Usuario ya existe")
     });

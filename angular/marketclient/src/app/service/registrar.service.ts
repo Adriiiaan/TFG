@@ -10,8 +10,8 @@ export class RegistrarService {
 
   constructor(private http:HttpClient) { }
 
-  registar(cliente:Cliente):Observable<any>{
-    let url="http:localhost:8000/registrar";
+  registrar(cliente:Cliente):Observable<any>{
+    let url="http://localhost:8000/registrar";
     return this.http.post(url,cliente);
 
   }
