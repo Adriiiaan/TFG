@@ -3,6 +3,7 @@ import { ProcesarPedidoService } from './../../service/procesar-pedido.service';
 import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/model/Categoria';
 import { Producto } from 'src/app/model/Producto';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-procesar-pedido',
@@ -14,7 +15,7 @@ export class ProcesarPedidoComponent implements OnInit{
   productos:Producto[];
   idCategoriaSel:number;
   cesta:CestaItem[];
-  constructor(private procesarPedidoService:ProcesarPedidoService){
+  constructor(private procesarPedidoService:ProcesarPedidoService,private menuComponent:MenuComponent){
 
 
   }
@@ -64,7 +65,10 @@ export class ProcesarPedidoComponent implements OnInit{
   }
 
   ProcesarPedido(){
-    this.procesarPedidoService.enviarPedido(this.cesta,"user1").subscribe(r=>alert("Pedido procesado"));
+    this.procesarPedidoService.enviarPedido(this.cesta,this.menuComponent.cliente.usuario).subscribe({
+     next:r=>alert("Pedido procesado"),
+     error:e=>alert("El pedido no se ha preocesado")
+    });
 
   }
 }

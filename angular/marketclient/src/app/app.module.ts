@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './controller/registrar/registrar.component';
 import { ProcesarPedidoComponent } from './controller/procesar-pedido/procesar-pedido.component';
 import { ConsultarPedidosComponent } from './controller/consultar-pedidos/consultar-pedidos.component';
+import { MenuComponent } from './controller/menu/menu.component';
+import { PortadaComponent } from './controller/portada/portada.component';
 
 
 
@@ -16,7 +18,9 @@ import { ConsultarPedidosComponent } from './controller/consultar-pedidos/consul
     LoginComponent,
     RegistrarComponent,
     ProcesarPedidoComponent,
-    ConsultarPedidosComponent
+    ConsultarPedidosComponent,
+    MenuComponent,
+    PortadaComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,6 @@ import { ConsultarPedidosComponent } from './controller/consultar-pedidos/consul
     FormsModule
   ],
   providers: [],
-  bootstrap: [ConsultarPedidosComponent]
+  bootstrap: [MenuComponent]
 })
 export class AppModule { }

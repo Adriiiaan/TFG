@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cliente } from 'src/app/model/Cliente';
 import { RegistrarService } from 'src/app/service/registrar.service';
 
@@ -9,12 +10,12 @@ import { RegistrarService } from 'src/app/service/registrar.service';
 })
 export class RegistrarComponent {
   cliente:Cliente=new Cliente();
-  constructor(private registrarService:RegistrarService){
+  constructor(private registrarService:RegistrarService,private router:Router){
   }
   registrar(){
     this.registrarService.registrar(this.cliente).subscribe({
-      next:data=>alert("Usuario registrado"),
-      error:err=>alert("Usuario ya existe")
+      next:data=>this.router.navigate(["/login"]),
+      error:err=>alert("Usuario ya existe,utilice otro")
     });
   }
 }
