@@ -1,5 +1,4 @@
-<p>pasarela-pago works!</p>
-
+<!-- pasarela-pago.component.html -->
 <div *ngIf="cesta && cesta.length > 0">
   <h2>Productos en la cesta:</h2>
   <ul>
@@ -11,5 +10,18 @@
 <div *ngIf="!cesta || cesta.length === 0">
   <p>No hay productos en la cesta.</p>
 </div>
+<form>
+  <label for="nombre">Nombre en la Tarjeta:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required><br>
 
-<input type="button"  (click)="ProcesarPedido()"   class="btn btn-info btn-md" value="Procesar pedido"><br>
+  <label for="numero">Número de Tarjeta:</label>
+  <input type="text" id="numero" name="numero" pattern="[0-9]{16}" [(ngModel)]="numero" required><br>
+
+  <label for="expiracion">Fecha de Expiración (MM/AA):</label>
+  <input type="text" id="expiracion" name="expiracion" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" [(ngModel)]="expiracion" required><br>
+
+  <label for="cvv">CVV:</label>
+  <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" [(ngModel)]="cvv" required><br>
+
+  <input type="button" (click)="ProcesarPedido()" class="btn btn-info btn-md" value="Procesar pedido"><br>
+</form>
