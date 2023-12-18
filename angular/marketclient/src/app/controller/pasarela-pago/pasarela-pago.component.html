@@ -1,4 +1,5 @@
 <!-- pasarela-pago.component.html -->
+<!-- Agrega esto en tu plantilla HTML -->
 <div *ngIf="cesta && cesta.length > 0">
   <h2>Productos en la cesta:</h2>
   <ul>
@@ -6,10 +7,13 @@
       {{ item.producto.nombre }} - Precio: {{ item.producto.precioUnitario }} - Unidades: {{ item.unidades }}
     </li>
   </ul>
+  <h3>Total de la compra: {{ precioTotal  }} €</h3>
 </div>
 <div *ngIf="!cesta || cesta.length === 0">
   <p>No hay productos en la cesta.</p>
 </div>
+
+
 <form>
   <label for="nombre">Nombre en la Tarjeta:</label>
   <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required><br>
