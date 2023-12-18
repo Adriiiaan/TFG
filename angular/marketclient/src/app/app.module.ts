@@ -10,6 +10,7 @@ import { ProcesarPedidoComponent } from './controller/procesar-pedido/procesar-p
 import { ConsultarPedidosComponent } from './controller/consultar-pedidos/consultar-pedidos.component';
 import { MenuComponent } from './controller/menu/menu.component';
 import { PortadaComponent } from './controller/portada/portada.component';
+import { PasarelaPagoComponent } from './controller/pasarela-pago/pasarela-pago.component';
 
 
 
@@ -20,7 +21,8 @@ import { PortadaComponent } from './controller/portada/portada.component';
     ProcesarPedidoComponent,
     ConsultarPedidosComponent,
     MenuComponent,
-    PortadaComponent
+    PortadaComponent,
+    PasarelaPagoComponent
   ],
   imports: [
     BrowserModule,

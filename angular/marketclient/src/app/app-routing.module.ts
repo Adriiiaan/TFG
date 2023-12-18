@@ -5,13 +5,15 @@ import { ConsultarPedidosComponent } from './controller/consultar-pedidos/consul
 import { ProcesarPedidoComponent } from './controller/procesar-pedido/procesar-pedido.component';
 import { RegistrarComponent } from './controller/registrar/registrar.component';
 import { PortadaComponent } from './controller/portada/portada.component';
+import { PasarelaPagoComponent } from './controller/pasarela-pago/pasarela-pago.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"consultar",component:ConsultarPedidosComponent},
   {path:"procesar",component:ProcesarPedidoComponent},
   {path:"registrar",component:RegistrarComponent},
-  {path:"portada",component:PortadaComponent}
+  {path:"portada",component:PortadaComponent},
+  {path:"pasarela",component:PasarelaPagoComponent}
 ];
 
 @NgModule({
