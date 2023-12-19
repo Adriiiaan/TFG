@@ -56,8 +56,20 @@ export class PasarelaPagoComponent implements OnInit {
     }
   }
 
-  verificarCampos() {
-    return this.nombre && this.numero && this.expiracion && this.cvv;
+  verificarCampos(): boolean {
+    const nombreValido = /^[a-zA-Z]+(?:['\s][a-zA-Z]+)*$/;
+    const numeroValido = /^\d{16}$/;
+    const expiracionValida = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    const cvvValido = /^\d{3}$/;
+
+    return (
+      nombreValido.test(this.nombre) &&
+      numeroValido.test(this.numero) &&
+      expiracionValida.test(this.expiracion) &&
+      cvvValido.test(this.cvv)
+    );
   }
+
+
 
 }
